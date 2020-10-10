@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/login_dest">
+    <fragment
+        android:id="@+id/login_dest"
+        android:name="com.raditya.wikipedia.feature.login.presentation.LoginFragment"
+        android:label="@string/login_fragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_dest_to_account_dest"
+            app:destination="@id/account_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/account_dest"
+        android:name="com.raditya.wikipedia.feature.account.presentation.AccountFragment"
+        android:label="@string/account_fragment"
+        tools:layout="@layout/fragment_account">
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+    </fragment>
+</navigation>
