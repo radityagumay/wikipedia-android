@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.textfield.TextInputEditText
 import com.raditya.wikipedia.R
@@ -30,13 +31,11 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.merge
 import reactivecircus.flowbinding.android.view.clicks
 import reactivecircus.flowbinding.android.widget.afterTextChanges
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
-    @Inject
-    internal lateinit var vm: LoginViewModel
+    private val vm: LoginViewModel by viewModels()
 
     private lateinit var etEmail: TextInputEditText
     private lateinit var etPassword: TextInputEditText
@@ -74,10 +73,12 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     is PasswordError -> etPassword.error = state.message
                     is EmailError -> etEmail.error = state.message
                     is LoginSuccess -> {
-                        goTo(actionLoginDestToAccountDest(
-                            etEmail.text.toString(),
-                            etPassword.text.toString()
-                        ))
+                        goTo(
+                            actionLoginDestToAccountDest(
+                                etEmail.text.toString(),
+                                etPassword.text.toString()
+                            )
+                        )
                     }
                     is LoginError -> Toast.makeText(activity, "error...", Toast.LENGTH_SHORT).show()
                     is Loading -> Toast.makeText(activity, "loading...", Toast.LENGTH_SHORT).show()

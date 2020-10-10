@@ -1,8 +1,11 @@
 package com.raditya.wikipedia.feature.login.presentation
 
+import androidx.hilt.Assisted
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.raditya.wikipedia.extension.isValidEmail
@@ -21,10 +24,10 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-class LoginViewModel @Inject constructor(
-    private val usecase: LoginUseCase
+class LoginViewModel @ViewModelInject constructor(
+    private val usecase: LoginUseCase,
+    @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     private var loginInfo: LoginInfo? = null
