@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.invoke
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
@@ -44,7 +43,7 @@ class AccountFragment : Fragment(R.layout.fragment_account) {
         view.findViewById<ImageView>(R.id.ivAvatar)
             .also { avatar = it }
             .setOnClickListener {
-                pickImage("image/*")
+                pickImage.launch("image/*")
             }
     }
 

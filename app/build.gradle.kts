@@ -6,12 +6,17 @@ import Dependency.ANDROID_CORE_KTX
 import Dependency.ANDROID_FRAGMENT_KTX
 import Dependency.ANDROID_LIFECYCLE_EXT
 import Dependency.ANDROID_MATERIAL
+import Dependency.ANDROID_NAV_FRAGMENT
+import Dependency.ANDROID_NAV_UI
 import Dependency.AndroidTest
+import Dependency.COIL
+import Dependency.FLOW_BINDING
 import Dependency.HILT_ANDROID
 import Dependency.HILT_COMMON
 import Dependency.HILT_VIEWMODEL
 import Dependency.KOTLIN
 import Dependency.Kapt
+import Dependency.Network
 import Dependency.UnitTest
 
 plugins {
@@ -73,37 +78,32 @@ dependencies {
     implementation(ANDROID_ANNOTATION)
     implementation(ANDROID_CONSTRAINT_LAYOUT)
     implementation(ANDROID_LIFECYCLE_EXT)
-/*
     implementation(ANDROID_FRAGMENT_KTX)
     implementation(ANDROID_ACTIVITY_KTX)
-*/
-
-    implementation("androidx.activity:activity-ktx:1.2.0-alpha04")
-    implementation("androidx.fragment:fragment-ktx:1.3.0-alpha04")
 
     // fragment nav
-    implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.3.0")
+    implementation(ANDROID_NAV_FRAGMENT)
+    implementation(ANDROID_NAV_UI)
 
     // image
-    implementation("io.coil-kt:coil:1.0.0-rc3")
+    implementation(COIL)
 
     // hilt
     implementation(HILT_ANDROID)
     implementation(HILT_COMMON)
     implementation(HILT_VIEWMODEL)
-    add("kapt", Kapt.HILT_ANDROID_COMPILER)
     add("kapt", Kapt.HILT_COMPILER)
+    add("kapt", Kapt.HILT_ANDROID_COMPILER)
     add("kaptAndroidTest", Kapt.HILT_ANDROID_COMPILER)
     androidTestImplementation(AndroidTest.HILT_ANDROID_TESTING)
 
     // flowbinding
-    implementation("io.github.reactivecircus.flowbinding:flowbinding-android:1.0.0-alpha04")
+    implementation(FLOW_BINDING)
 
     // network
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.8.1")
+    implementation(Network.RETROFIT)
+    implementation(Network.RETROFIT_CONVERTER_GSON)
+    implementation(Network.OKHTTP)
 
     testImplementation(UnitTest.JUNIT)
     androidTestImplementation(AndroidTest.ANDROID_JUNIT)
