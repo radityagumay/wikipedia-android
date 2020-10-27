@@ -92,12 +92,12 @@ dependencies {
     implementation(HILT_ANDROID)
     implementation(HILT_COMMON)
     implementation(HILT_VIEWMODEL)
-    add("kapt", Kapt.HILT_COMPILER)
-    add("kapt", Kapt.HILT_ANDROID_COMPILER)
-    add("kaptAndroidTest", Kapt.HILT_ANDROID_COMPILER)
+    kapt(Kapt.HILT_COMPILER)
+    kapt(Kapt.HILT_ANDROID_COMPILER)
+    kaptAndroidTest(Kapt.HILT_ANDROID_COMPILER)
     androidTestImplementation(AndroidTest.HILT_ANDROID_TESTING)
 
-    // flowbinding
+    // flow binding
     implementation(FLOW_BINDING)
 
     // network

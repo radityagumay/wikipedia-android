@@ -11,7 +11,7 @@ object Dependency {
     const val ANDROID_NAV_UI = "androidx.navigation:navigation-ui-ktx:2.3.1"
     const val ANDROID_NAV_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:2.3.1"
 
-    const val HILT_ANDROID = "com.google.dagger:hilt-android:2.28.3-alpha"
+    const val HILT_ANDROID = "com.google.dagger:hilt-android:2.29.1-alpha"
     const val HILT_COMMON = "androidx.hilt:hilt-common:1.0.0-alpha02"
     const val HILT_VIEWMODEL = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02"
 
@@ -26,7 +26,7 @@ object Dependency {
     }
 
     object Kapt {
-        const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:2.28.3-alpha"
+        const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:2.29.1-alpha"
         const val HILT_COMPILER = "androidx.hilt:hilt-compiler:1.0.0-alpha02"
     }
 
@@ -39,6 +39,6 @@ object Dependency {
         const val ANDROID_JUNIT = "androidx.test.ext:junit:1.1.2"
         const val ANDROID_ESPRESSO_CORE = "androidx.test.espresso:espresso-core:3.3.0"
 
-        const val HILT_ANDROID_TESTING = "com.google.dagger:hilt-android-testing:2.28.3-alpha"
+        const val HILT_ANDROID_TESTING = "com.google.dagger:hilt-android-testing:2.29.1-alpha"
     }
 }
