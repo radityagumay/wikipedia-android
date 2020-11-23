@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">jiva-android</string>
+    <string name="app_name">wikipedia-android</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
